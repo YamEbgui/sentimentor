@@ -1,0 +1,71 @@
+/* import section */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rubik+Beastly&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap');
+
+/* elements section */
+
+body{
+    background-image:url('https://wallpapercave.com/wp/wp5498323.png');
+    background-position: center;
+    background-size: cover;
+    width: 98%;
+    height: auto;
+
+}
+span{
+    background-color: white;
+    border: purple 0.35vh dashed;
+    font-size: 3vh;
+}
+image{
+    align-items: center;
+}
+textarea{
+    width: 75%;
+    height: 15vh;
+    font-size:1.5vh;
+    font-family: 'Bungee Inline';
+}
+button{
+    font-family: 'Press Start 2P';
+    color: white;
+    background-color:purple;
+    width: 25%;
+    height: 5vh;
+    font-size: 3vh;
+}
+
+h1, h2 {
+    font-family: 'Press Start 2P';
+    text-align: center;
+    color: white;
+    font-size:5vh;
+}
+h2{
+    font-size:3vh;
+}
+
+/* id section */
+
+#content{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap:1vh;
+    
+}
+#loading-gif{
+    border-radius: 67%;
+    height: 25vh;
+}
+#status-image{
+    height: 25vh;
+}
+#loading , #status{
+    margin-top: 2vh;
+    margin-left: 41vw;
+    margin-right: 35vw;
+    height: 15vh;
+
+}
