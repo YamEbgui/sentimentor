@@ -24,10 +24,12 @@ async function getInfoFromApi(event){
         let status=response.status
         addCatStatusToPage(status)
         loadingElement.hidden = true;
-        if (response.ok){
+        if (response.status < 400){
             let resultOfPost = await response.json(); 
             resultOfPost=resultOfPost.result;
             changeDOM(resultOfPost)
+        }else{
+            resultSpan.textContent = "Error: something happend"
         }
     }
 //this function get result => {polarity : , type:} and change the Dom elements to show it to the user
