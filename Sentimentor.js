@@ -24,16 +24,17 @@ async function getInfoFromApi(event){
         let status=response.status
         addCatStatusToPage(status)
         loadingElement.hidden = true;
-        if (response.ok){
+        if (response.status < 400){
             let resultOfPost = await response.json(); 
             resultOfPost=resultOfPost.result;
-            console.log(resultOfPost)
             changeDOM(resultOfPost)
+        }else{
+            resultSpan.textContent = "Error: something happend"
         }
     }
 //this function get result => {polarity : , type:} and change the Dom elements to show it to the user
 function changeDOM(result){
-    resultSpan.textContent = "Polarity:" + JSON.stringify(result.polarity)+" Type:"+ JSON.stringify(result.type);
+    resultSpan.textContent = 'Polarity:' + JSON.stringify(result.polarity)+' Type:'+ JSON.stringify(result.type).substr(1,JSON.stringify(result.type).length-2);
     if (result.polarity > 0){
             resultSpan.style.color = "green"
     }else if (result.polarity < 0){
