@@ -27,13 +27,12 @@ async function getInfoFromApi(event){
         if (response.ok){
             let resultOfPost = await response.json(); 
             resultOfPost=resultOfPost.result;
-            console.log(resultOfPost)
             changeDOM(resultOfPost)
         }
     }
 //this function get result => {polarity : , type:} and change the Dom elements to show it to the user
 function changeDOM(result){
-    resultSpan.textContent = "Polarity:" + JSON.stringify(result.polarity)+" Type:"+ JSON.stringify(result.type);
+    resultSpan.textContent = 'Polarity:' + JSON.stringify(result.polarity)+' Type:'+ JSON.stringify(result.type).substr(1,JSON.stringify(result.type).length-2);
     if (result.polarity > 0){
             resultSpan.style.color = "green"
     }else if (result.polarity < 0){
